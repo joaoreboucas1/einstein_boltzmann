@@ -33,6 +33,10 @@ density_field = np.real(ifftn(delta_k))
 # Visualizing a slice
 plt.figure(figsize=(8, 6))
 plt.imshow(density_field[:, :, N//2], cmap="inferno")
-plt.colorbar(label="Density Contrast")
+plt.colorbar(label=r"$\delta_m(x, y)$")
+plt.xlabel(r"$x$ (Mpc)")
+plt.ylabel(r"$y$ (Mpc)")
 plt.title("2D Slice of a 3D Gaussian Matter Distribution")
-plt.show()
+# plt.show()
+
+plt.savefig("initial_field.pdf")
